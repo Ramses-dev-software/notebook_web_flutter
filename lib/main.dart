@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:notebook_web/Presentation/View/Pages/WelcomePage/welcome.dart';
+import 'package:notebook_web/Presentation/View/routes.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +11,20 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Wazzaa!'),
-        ),
-      ),
+    return MaterialApp(
+      // theme: ThemeApp.themeDataLight,
+      // darkTheme: ThemeApp.ThemeDataDark,
+      onGenerateRoute: (settings) {
+        switch(settings.name) {
+          case Routes.start:
+           return MaterialPageRoute(builder: (_) => WelcomePage());
+          
+        }
+
+        return MaterialPageRoute(builder: (_) => WelcomePage());
+      },
+      
+      home: WelcomePage()
     );
   }
 }
