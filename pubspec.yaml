@@ -25,9 +25,61 @@ flutter:
   assets:
     - assets/images/
   fonts:
-    - family: Poppins
+    - family: Afacad_Flux
       fonts:
-        - asset: assets/fonts/Poppins/Poppins-Black.ttf
-        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
-        - asset: assets/fonts/Poppins/Poppins-ExtraBold.ttf
-        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+        - asset: assets/fonts/Afacad_Flux/static/AfacadFlux-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Afacad_Flux/static/AfacadFlux-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Afacad_Flux/static/AfacadFlux-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Afacad_Flux/static/AfacadFlux-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Afacad_Flux/static/AfacadFlux-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Afacad_Flux/static/AfacadFlux-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Afacad_Flux/static/AfacadFlux-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Afacad_Flux/static/AfacadFlux-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Afacad_Flux/static/AfacadFlux-Thin.ttf
+          weight: 100
+
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Afacad_Flux,Roboto/Roboto/Roboto-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Afacad_Flux,Roboto/Roboto/Roboto-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/Afacad_Flux,Roboto/Roboto/Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Afacad_Flux,Roboto/Roboto/Roboto-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Afacad_Flux,Roboto/Roboto/Roboto-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Afacad_Flux,Roboto/Roboto/Roboto-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/Afacad_Flux,Roboto/Roboto/Roboto-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Afacad_Flux,Roboto/Roboto/Roboto-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Afacad_Flux,Roboto/Roboto/Roboto-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Afacad_Flux,Roboto/Roboto/Roboto-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/Afacad_Flux,Roboto/Roboto/Roboto-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Afacad_Flux,Roboto/Roboto/Roboto-MediumItalic.ttf
+          weight: 500
+          style: italic
+
+        
+        
+        
+      

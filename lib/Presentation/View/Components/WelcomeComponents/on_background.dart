@@ -1,14 +1,23 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class OnBackground extends StatelessWidget {
-  const OnBackground({super.key});
+  final String assetRoute;
+  final double? height;
+  final double? width;
+  final ColorFilter? filter;
+  const OnBackground({
+    super.key, 
+    required this.assetRoute, 
+    this.height, 
+    this.width,
+    this.filter
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 600,
+      height: height,
+      width: width,
       child: Stack(
         children: [
           Positioned.fill(
@@ -16,19 +25,10 @@ class OnBackground extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(Colors.lightBlue, BlendMode.color),
-                image: AssetImage('assets/images/abstractBackground.png'))),
+                colorFilter: filter,
+                image: AssetImage(assetRoute))),
     ),
     ),
-
-    Positioned.fill(
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 2, sigmaY: 7),
-            child: Container(
-              color: Colors.white.withOpacity(0),
-            ),
-          ),
-        ),
         ],
       ),
     );

@@ -1,34 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
 
-class ButtonStart extends StatefulWidget {
-  final Color background;
-  const ButtonStart({super.key, required this.background});
 
-  @override
-  State<ButtonStart> createState() => _ButtonStartState();
-}
+class ButtonStart extends StatelessWidget {
+  final String text;
+  final Color? background;
+  final Color? textColor;
+  final String routeDestination;
 
-class _ButtonStartState extends State<ButtonStart> {
+  const ButtonStart({super.key, required this.text, 
+  this.background, this.textColor, required this.routeDestination});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () {
-        Navigator.pushReplacementNamed(context, '/start_loginpage');
-        // if(currentPage < 2) {
-        //   pageController.nextPage(
-        //     duration: Duration(seconds: 1),
-        //     curve: Curves.fastEaseInToSlowEaseOut
-        //   );
-        // }
+        Navigator.pushReplacementNamed(context, routeDestination);
       },
       child: SizedBox(
         width: 200,
         child: Container(
           padding: EdgeInsets.all(15),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15), color: widget.background),
+              borderRadius: BorderRadius.circular(15), color: background),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -40,8 +35,8 @@ class _ButtonStartState extends State<ButtonStart> {
                 width: 5,
               ),
               Text(
-                'Get started...',
-                style: TextStylesApp.lightPoppinsFonts[0],
+                text,
+                style: AfacadFluxFont.afacadThin.copyWith(color: textColor, fontSize: 17),
               )
             ],
           ),

@@ -2,114 +2,114 @@ import 'package:flutter/material.dart';
 
 final class ColorsApp {
   // * Light styles
-  static Color orange = const Color.fromARGB(255, 245, 136, 20);
-  static Color black = Colors.black;
-  static Color white = Colors.white;
-  static Color darkPurple = Color.fromARGB(255, 4, 4, 54);
+  static const Color orange = Color.fromARGB(255, 245, 136, 20);
+  static const Color black = Colors.black;
+  static const Color white = Colors.white;
+  static const Color darkPurple = Color.fromARGB(255, 4, 4, 54);
 }
 
-final class TextStylesApp {
-  // Todo: Light textStyles
-  static List<TextStyle> lightPoppinsFonts = [
-    // * Poppins regular
-    TextStyle(
-    fontSize: 14,
-    color: ColorsApp.black,
-    fontWeight: FontWeight.normal,
-    fontFamily: 'Poppins'
-  ),
-  // * Poppins regular bold
-  TextStyle(
-    fontSize: 14,
-    color: ColorsApp.black,
+const _fontFamily = 'Afacad_Flux';
+const _fontFamily2 = 'Roboto';
+
+class RobotoFont {
+  static const TextStyle robotoBlack = TextStyle(
+    fontFamily: _fontFamily2,
+    fontWeight: FontWeight.w900,
+  );
+
+  static const TextStyle robotoBlackItalic = TextStyle(
+    fontFamily: _fontFamily2,
+    fontWeight: FontWeight.w900,
+    fontStyle: FontStyle.italic,
+  );
+
+  static const TextStyle robotoBold = TextStyle(
+    fontFamily: _fontFamily2,
+    fontWeight: FontWeight.w700,
+  );
+
+  static const TextStyle robotoBoldItalic = TextStyle(
+    fontFamily: _fontFamily2,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.italic,
+  );
+
+  static const TextStyle robotoRegular = TextStyle(
+    fontFamily: _fontFamily2,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle robotoItalic = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.italic,
+  );
+
+  static const TextStyle robotoLight = TextStyle(
+    fontFamily: _fontFamily2,
     fontWeight: FontWeight.w300,
-    fontFamily: 'Poppins'
-  ),
-  // * Poppins medium
-  TextStyle(
-    fontSize: 25,
-    color: ColorsApp.black,
-    fontFamily: 'Poppins'
-  ),
-  // * Poppins medium bold
-  TextStyle(
-    fontSize: 25,
-    color: ColorsApp.black,
-    fontFamily: 'Poppins',
-    fontWeight: FontWeight.bold
-  ),
-  // * Poppins large
-  TextStyle(
-    fontSize: 30,
-    color: ColorsApp.black,
-    fontFamily: 'Poppins',
-  ),
-  // * Poppins large bold
-  TextStyle(
-    fontSize: 50,
-    color: ColorsApp.black,
-    fontWeight: FontWeight.bold,
-    fontFamily: 'Poppins'
-  )
-];
+  );
 
-  // Todo: Dark textStyles
-  static List<TextStyle> darkPoppinsFonts = [
-        // * Poppins regular
-    TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.normal,
-    color: ColorsApp.white,
-    fontFamily: 'Poppins'
-  ),
-  // * Poppins regular bold
-  TextStyle(
-    fontSize: 14,
-    color: ColorsApp.white,
+  static const TextStyle robotoLightItalic = TextStyle(
+    fontFamily: _fontFamily2,
     fontWeight: FontWeight.w300,
-    fontFamily: 'Poppins/'
-  ),
-  // * Poppins medium
-  TextStyle(
-    fontSize: 25,
-    color: ColorsApp.white,
-    fontFamily: 'Poppins'
-  ),
-  // * Poppins medium bold
-  TextStyle(
-    fontSize: 22,
-    color: ColorsApp.white,
-    fontFamily: 'Poppins',
-    fontWeight: FontWeight.bold
-  ),
-  // * Poppins large
-  TextStyle(
-    fontSize: 30,
-    color: ColorsApp.white,
-    fontFamily: 'Poppins',
-  ),
-  // * Poppins large bold
-  TextStyle(
-    fontSize: 30,
-    color: ColorsApp.white,
-    fontWeight: FontWeight.bold,
-    fontFamily: 'Poppins'
-  )
-  ];
-  
-
-
+    fontStyle: FontStyle.italic
+  );
 }
+
+class AfacadFluxFont {
+  // Definiciones de TextStyle con diferentes pesos y estilos
+  static const TextStyle afacadBlack = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w900,
+  );
+
+  static const TextStyle afacadBold = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w700,
+  );
+
+  static const TextStyle afacadExtraLight = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w200,
+  );
+
+  static const TextStyle afacadLight = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w300,
+  );
+
+  static const TextStyle afacadMedium = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const TextStyle afacadRegular = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle afacadSemiBold = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w600,
+  );
+
+  static const TextStyle afacadThin = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w100,
+  );
+}
+
+
 
 final class ThemeApp {
   static ThemeData themeDataLight = ThemeData(
     useMaterial3: true,
-    colorSchemeSeed: ColorsApp.orange,
     brightness: Brightness.light
   );
 
   static ThemeData themeDataDark = ThemeData.dark(
-    useMaterial3: true
+    useMaterial3: true,
   );
 
 }
