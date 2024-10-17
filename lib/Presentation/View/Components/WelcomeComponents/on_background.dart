@@ -4,33 +4,51 @@ class OnBackground extends StatelessWidget {
   final String assetRoute;
   final double? height;
   final double? width;
-  final ColorFilter? filter;
   const OnBackground({
     super.key, 
     required this.assetRoute, 
     this.height, 
     this.width,
-    this.filter
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height,
       width: width,
-      child: Stack(
-        children: [
-          Positioned.fill(
-      child: Container(
-        decoration: BoxDecoration(
+      height: height,
+      child: Image.asset(assetRoute)
+    );
+  }
+}
+
+final class AssetsIM extends StatelessWidget {
+  final String assetRoute;
+  final double width;
+  final double height;
+  final ColorFilter? filter;
+  
+  const AssetsIM({
+    super.key,
+    required this.assetRoute,
+    required this.height,
+    required this.width,
+    this.filter
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned.fill(
+        child: Container(
+          width: width,
+          height: height,
+          decoration: BoxDecoration(
             image: DecorationImage(
-                fit: BoxFit.cover,
-                colorFilter: filter,
-                image: AssetImage(assetRoute))),
-    ),
-    ),
-        ],
-      ),
+              colorFilter: filter,
+              image: AssetImage(assetRoute),
+              fit: BoxFit.cover
+            )
+          ),
+        ),
     );
   }
 }

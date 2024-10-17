@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
-final class Responsive extends StatelessWidget {
-  
+
+final class Responsive extends StatelessWidget {  
   final Widget mobile;
   final Widget? tablet;
   final Widget desktop;
@@ -28,25 +29,38 @@ final class Responsive extends StatelessWidget {
     }
   }
 
+  // Todo: Breakpoints comprobation
+  static List<Breakpoint> breakpointsResponsive = [
+    Breakpoint(start: 0, end: 450, name: 'MOBILE'),
+    Breakpoint(start: 451, end: 800, name: 'TABLET'),
+    Breakpoint(start: 801, end: 1920, name: 'DESKTOP'),
+    Breakpoint(start: 1921, end: double.infinity, name: '4K'),
+  ];
 
+  // Todo: Functions actual size width
   static bool onMobile(BuildContext context) =>
     MediaQuery.sizeOf(context).width <= 450;
 
   static bool onTablet(BuildContext context) =>
-    MediaQuery.sizeOf(context).width < 1280
+    MediaQuery.sizeOf(context).width <= 800
       && MediaQuery.sizeOf(context).width >= 450;
 
   static bool onDesktop(BuildContext context) => 
-    MediaQuery.sizeOf(context).width >= 1280;
+    MediaQuery.sizeOf(context).width > 800 &&
+      MediaQuery.sizeOf(context).width <= 1920;
+
+  static bool on4k(BuildContext context) => 
+    MediaQuery.sizeOf(context).width > 1920;
+
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
 
-    if(size.width >= 1280) {
+    if(size.width > 800) {
       return desktop;
     }
-    else if(size.width >= 450 && tablet != null) {
+    else if(size.width > 450 && tablet != null) {
       return tablet!;
     }
     else {

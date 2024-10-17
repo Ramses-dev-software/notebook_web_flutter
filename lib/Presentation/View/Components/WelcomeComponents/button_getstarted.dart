@@ -34,7 +34,7 @@ class ButtonGetstarted extends StatelessWidget {
         Navigator.pushReplacementNamed(context, toRoute);
       },
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: gradient!),
           borderRadius: BorderRadius.circular(5) ,color: background),

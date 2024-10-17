@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:notebook_web/Presentation/View/Pages/WelcomePage/welcome.dart';
+import 'package:notebook_web/Presentation/View/Style/responsive.dart';
+import 'package:notebook_web/Presentation/View/Style/style_app.dart';
 import 'package:notebook_web/Presentation/View/routes.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
   FlutterError.onError = (FlutterErrorDetails details) {
     print(details.exceptionAsString());
+    print(DateTime.now());
   };
 
   runApp(const MainApp());
@@ -16,17 +20,19 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // theme: ThemeApp.themeDataLight,
-      // darkTheme: ThemeApp.ThemeDataDark,
+      builder: (context, widget) => ResponsiveBreakpoints.builder(
+        child: widget!,
+        breakpoints: Responsive.breakpointsResponsive
+      ),
+      theme: ThemeApp.themeDataLight,
       onGenerateRoute: (settings) {
         switch(settings.name) {
           case Routes.start:
            return MaterialPageRoute(builder: (_) => WelcomePage());
-          
         }
-
         return MaterialPageRoute(builder: (_) => WelcomePage());
       },
+      
       
       home: WelcomePage()
     );

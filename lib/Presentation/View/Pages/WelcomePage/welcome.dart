@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:notebook_web/Presentation/View/Pages/WelcomePage/body_view.dart';
-import 'package:notebook_web/Presentation/View/Pages/WelcomePage/height_view.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
