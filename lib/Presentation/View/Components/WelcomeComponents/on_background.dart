@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class OnBackground extends StatelessWidget {
+class AssetsIM extends StatelessWidget {
   final String assetRoute;
   final double? height;
   final double? width;
-  const OnBackground({
+  const AssetsIM({
     super.key, 
     required this.assetRoute, 
     this.height, 
@@ -21,13 +21,13 @@ class OnBackground extends StatelessWidget {
   }
 }
 
-final class AssetsIM extends StatelessWidget {
+final class OnBackground extends StatelessWidget {
   final String assetRoute;
   final double width;
   final double height;
   final ColorFilter? filter;
   
-  const AssetsIM({
+  const OnBackground({
     super.key,
     required this.assetRoute,
     required this.height,
@@ -37,8 +37,7 @@ final class AssetsIM extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned.fill(
-        child: Container(
+    return Container(
           width: width,
           height: height,
           decoration: BoxDecoration(
@@ -48,7 +47,6 @@ final class AssetsIM extends StatelessWidget {
               fit: BoxFit.cover
             )
           ),
-        ),
     );
   }
 }

@@ -1,6 +1,5 @@
 {
     "configurations": [
-    
         {
             "name": "Launch Edge",
             "request": "launch",
@@ -8,12 +7,12 @@
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
         },
-    {
-        "name": "Launch Chrome",
-        "request": "launch",
-        "type": "chrome",
-        "url": "http://localhost:8080",
-        "webRoot": "${workspaceFolder}"
-    }
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        }
     ]
 }
