@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/logo_app.dart';
 import 'package:notebook_web/Presentation/View/Pages/WelcomePage/welcome.dart';
 import 'package:notebook_web/Presentation/View/Style/responsive.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
@@ -34,7 +35,7 @@ class MainApp extends StatelessWidget {
       },
       
       
-      home: WelcomePage()
+      home: WelcomePage(),
     );
   }
 }

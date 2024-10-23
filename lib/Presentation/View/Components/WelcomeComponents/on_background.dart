@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class AssetsIM extends StatelessWidget {
@@ -16,7 +17,7 @@ class AssetsIM extends StatelessWidget {
     return SizedBox(
       width: width,
       height: height,
-      child: Image.asset(assetRoute)
+      child: Image(image: AssetImage(assetRoute),),
     );
   }
 }
@@ -43,7 +44,9 @@ final class OnBackground extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               colorFilter: filter,
-              image: AssetImage(assetRoute),
+              image: AssetImage(
+                assetRoute
+              ),
               fit: BoxFit.cover
             )
           ),

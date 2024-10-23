@@ -1,11 +1,15 @@
 final class RouteAssetImages {
   // Route images
-  static String abstractBackgroundAsset = 'assets/images/AbstractBackground-assets.png';
-  static String appRemovebgAsset = 'assets/images/App-removebg-assets.png';
-  static String cloudSyncAsset = 'assets/images/CloudSync-assets.png';
-  static String communicationAsset = 'assets/images/Communication-assets.png';
-  static String ntAsset = 'assets/images/NTAssets.png';
-  static String rashLogoAsset = 'assets/images/RashLogo-assets.png';
-  static String abstractBackgroundLogAssets = 'assets/images/AbstractBackgroundLog-assets.png';
-  static String screamAsset = 'assets/images/scream-assets.png';
+  static const ai = 'assets/images/AI.gif';
+  static const autocomplete = 'assets/images/autocomplete.gif';
+  static const background = 'assets/images/background.png';
+  static const coding = 'assets/images/coding.gif';
+  static const document = 'assets/images/document.gif';
+  static const files = 'assets/images/files.png';
+  static const google = 'assets/images/google.gif';
+  static const notelogo = 'assets/images/notelogo.png';
+  static const phone = 'assets/images/phone.gif';
+  static const github = 'assets/images/github.png';
+  static const checkbox = 'assets/images/checkbox.png';
+  static const notephone = 'assets/images/notephone.gif';
 }
