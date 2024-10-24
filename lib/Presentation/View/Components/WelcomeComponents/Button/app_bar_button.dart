@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/on_background.dart';
+import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Assets/on_background.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
+
 
 class AppBarButton extends StatelessWidget {
   final String toRoute;
@@ -11,6 +12,7 @@ class AppBarButton extends StatelessWidget {
   final String? routeImage;
   final double? width;
   final double? height;
+
 
   const AppBarButton(
       {super.key,
@@ -23,6 +25,7 @@ class AppBarButton extends StatelessWidget {
       this.background,
       this.gradient});
 
+
   factory AppBarButton.signIn() {
     return AppBarButton(
       toRoute: '/',
@@ -31,6 +34,7 @@ class AppBarButton extends StatelessWidget {
       background: ColorsApp.black,
     );
   }
+
 
   factory AppBarButton.download() {
     return AppBarButton(
@@ -42,16 +46,17 @@ class AppBarButton extends StatelessWidget {
     );
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width,
       height: height,
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 35),
+        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
         decoration: BoxDecoration(
             color: background,
             gradient: gradient,
-            borderRadius: BorderRadius.circular(5)),
+            borderRadius: BorderRadius.circular(10)),
         child: GestureDetector(
           onTap: () => Navigator.pushReplacementNamed(context, toRoute),
           child: routeImage != null
@@ -60,7 +65,7 @@ class AppBarButton extends StatelessWidget {
                     AssetsIM(
                       assetRoute: routeImage!,
                       width: 40,
-                      height: 100,
+                      height: 80,
                     ),
                     SizedBox(
                       width: 10,
@@ -81,9 +86,11 @@ class AppBarButton extends StatelessWidget {
   }
 }
 
+
 class DrawerListButton extends StatelessWidget {
   final String titleList;
   const DrawerListButton({super.key, required this.titleList});
+
 
   @override
   Widget build(BuildContext context) {
@@ -91,3 +98,5 @@ class DrawerListButton extends StatelessWidget {
         style: RobotoFont.robotoRegular.copyWith(fontSize: 15));
   }
 }
+
+

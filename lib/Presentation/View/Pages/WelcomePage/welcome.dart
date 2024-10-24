@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/app_bar_button.dart';
-import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/logo_app.dart';
+import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Button/app_bar_button.dart';
+import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Containers/logo_app.dart';
 import 'package:notebook_web/Presentation/View/Pages/WelcomePage/body_view.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -39,11 +39,11 @@ class WelcomePage extends StatelessWidget {
                     ),
                     ), 
                     ListTile(
-                      title: DrawerListButton(titleList: 'Sign in'),
+                      title: AppBarButton.signIn(),
                       onTap: () {},
                     ),
                     ListTile(
-                      title: DrawerListButton(titleList: 'Download'),
+                      title: AppBarButton.download(),
                       onTap: () {},
                     )
                   ],

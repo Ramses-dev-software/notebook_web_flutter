@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/information_column_start.dart';
+import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Containers/ticket_section.dart';
+import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Responsive/row_column.dart';
+import 'package:notebook_web/Presentation/View/Style/responsive.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 
 class BodyViewMid extends StatelessWidget {
   const BodyViewMid({super.key});
@@ -9,107 +10,49 @@ class BodyViewMid extends StatelessWidget {
   @override
   SliverToBoxAdapter build(BuildContext context) {
     return SliverToBoxAdapter(
-            child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: ResponsiveBreakpoints.of(context).isMobile ? 20 : 30),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 60,
-              ),
-              Container(
-                  padding: EdgeInsets.all(20),
-                  width: 1000,
-                  decoration: BoxDecoration(
-                      color: ColorsApp.orange,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Row(
+      child: Container(
+        color: ColorsApp.white,
+        child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: Responsive.onMobile(context) ? 20 : 70
+        ), 
+        child: Column(
+          children: [
+            SizedBox(
+              height: 150,
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: SizedBox(
+                width: !Responsive.onMobile(context) ? 700 : null,
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // AssetsIM(
-                      //   width: 50,
-                      //   height: 50,
-                      //   assetRoute: RouteAssetImages.screamAsset,
-                      // ),
-                      SizedBox(width: 20,),
-                      Expanded(
-                        child: Text(
-                        overflow: TextOverflow.clip,
-                        textAlign: TextAlign.left,
-                        "Noterg is an notebook with a powerful system to make notes.",
-                        style: RobotoFont.robotoRegular
-                            .copyWith(fontSize: 18,
-                            color: ColorsApp.white),
-                          ),
+                      TicketSection(
+                          width: 250,
+                          text:
+                              'Build to have an simple experience in the writing'),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        textAlign: TextAlign.start,
+                        'Noterg have the design and style at you fingertips',
+                        style: AfacadFluxFont.afacadBold.copyWith(
+                            fontSize: Responsive.onMobile(context) ? 40 : 60, overflow: TextOverflow.clip),
                       )
                     ],
-                  ),
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              SizedBox(
-                width: 800,
-                child: Text(
-                  textAlign: TextAlign.center,
-                  "Noterg transforms the writing process. Build, design, and deploy beautiful notes, and embedded experiences from a good app.",
-                  style: RobotoFont.robotoRegular.copyWith(
-                    fontSize: 25
-                  ),
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              // AssetsIM(
-              //   assetRoute: RouteAssetImages.appRemovebgAsset,
-              // ),
-              SizedBox(
-                height: 50,
-              ),
-              SizedBox(
-                width: 300,
-                child: Divider(
-                  color: ColorsApp.black,
-                  thickness: 3,
-                ),
-              ),
-              SizedBox(height: 30,),
-              SizedBox(
-                child: ResponsiveRowColumn(
-                  layout: ResponsiveBreakpoints.of(context).screenWidth <= 800
-                      ? ResponsiveRowColumnType.COLUMN
-                      : ResponsiveRowColumnType.ROW,
-                      columnMainAxisAlignment: MainAxisAlignment.center,
-                  rowMainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ResponsiveRowColumnItem(
-                      child: InformationColumnStart(
-                        titleSpace: "Eficient, faster and optimized",
-                        contentSpace: "Speed and performance in every task.",
-                      ),
-                    ),
-                    ResponsiveRowColumnItem(
-                      child: InformationColumnStart(
-                        titleSpace: "An simple app performant by design",
-                          contentSpace:
-                              "Designed to be simple and efficient, maximizing usability."),
-                    ),
-                    ResponsiveRowColumnItem(
-                      child: InformationColumnStart(
-                        titleSpace: "Collaborative projects",
-                        contentSpace:
-                            "acilitates real-time collaboration between multiple users.",
-                      ),
-                    )
-                  ],
-                ),
-              ),
-
-              SizedBox(height: 400,),
-
-            ],
-          ),
+              )
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            RowColumnResponsiveSection(),
+          ],
         ),
-            );
+      ),
+    ),
+      );
   }
 }

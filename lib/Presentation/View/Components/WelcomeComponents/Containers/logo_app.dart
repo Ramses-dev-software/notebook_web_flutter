@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/on_background.dart';
+import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Assets/on_background.dart';
 import 'package:notebook_web/Presentation/View/Style/assets_images.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
+
 
 class LogoApp extends StatelessWidget {
   final Color? background;
@@ -11,19 +12,20 @@ class LogoApp extends StatelessWidget {
   const LogoApp({
     super.key, this.background, this.textColor, required this.height, required this.width});
 
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 160,
-      height: 55,
+      height: 50,
       decoration: BoxDecoration(
           color: background, borderRadius: BorderRadius.circular(5)),
       child: Row(
         children: [
           AssetsIM(
             assetRoute: RouteAssetImages.notelogo,
-            width: width,
-            height: height,
+            width: 60,
+            height: 60,
           ),
           SizedBox(
             width: 10,
@@ -38,3 +40,5 @@ class LogoApp extends StatelessWidget {
     );
   }
 }
+
+

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/app_bar_button.dart';
-import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/logo_app.dart';
-import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/on_background.dart';
+import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Button/app_bar_button.dart';
+import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Containers/logo_app.dart';
+import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Assets/on_background.dart';
 import 'package:notebook_web/Presentation/View/Style/assets_images.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
 import 'package:responsive_framework/responsive_framework.dart';
