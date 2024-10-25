@@ -9,7 +9,6 @@ import 'package:responsive_framework/responsive_framework.dart';
 void main() {
   FlutterError.onError = (FlutterErrorDetails details) {
     print(details.exceptionAsString());
-    print(DateTime.now());
   };
 
   runApp(const MainApp());

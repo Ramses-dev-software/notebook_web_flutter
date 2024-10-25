@@ -4,6 +4,7 @@ import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Butt
 import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Assets/on_background.dart';
 import 'package:notebook_web/Presentation/View/Style/assets_images.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
+import 'package:notebook_web/Presentation/View/routes.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 
@@ -26,12 +27,16 @@ class BodyViewTop extends StatelessWidget {
   Widget build(BuildContext context) {
     _setDimensions(context);
     return SliverToBoxAdapter(
-        child: Stack(
-      children: [OnBackground(
+        child: Container(
+          color: ColorsApp.white,
+          child: Stack(
+      children: [
+        OnBackground(
           alignment: Alignment.center,
           assetRoute: RouteAssetImages.background,
+          filter: ColorFilter.mode(ColorsApp.pinkPurple, BlendMode.softLight),
           width: ResponsiveBreakpoints.of(context).screenWidth,
-          height: _heightBackground,
+          height: 900,
         ),
         Align(
           alignment: Alignment.center,
@@ -46,7 +51,7 @@ class BodyViewTop extends StatelessWidget {
                       Align(
                         alignment: Alignment.center,
                         child: SizedBox(
-                            width: 600,
+                            width: 700,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -97,7 +102,7 @@ class BodyViewTop extends StatelessWidget {
                                 text: 'Download for free',
                                 background: ColorsApp.white,
                                 textColor: ColorsApp.black,
-                                width: 240,
+                                width: 220,
                                 height: 70,
                                 routeImage: RouteAssetImages.notelogo,
                               ),
@@ -110,10 +115,10 @@ class BodyViewTop extends StatelessWidget {
                             ),
                             ResponsiveRowColumnItem(
                               child: AppBarButton(
-                                toRoute: '/',
+                                toRoute: Routes.github,
                                 text: 'Github',
                                 width: ResponsiveBreakpoints.of(context).isMobile
-                                   || ResponsiveBreakpoints.of(context).isTablet ? 240 : 190,
+                                   || ResponsiveBreakpoints.of(context).isTablet ? 220 : 150,
                                 height: 70,
                                 background: ColorsApp.black,
                                 textColor: ColorsApp.white,
@@ -149,6 +154,8 @@ class BodyViewTop extends StatelessWidget {
                     ],
                   ))),
       ],
-    ));
+    )
+        )
+    );
   }
 }

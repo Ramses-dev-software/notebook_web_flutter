@@ -11,6 +11,6 @@ final class RouteAssetImages {
   static const phone = 'assets/images/phone.gif';
   static const github = 'assets/images/github.png';
   static const checkbox = 'assets/images/checkbox.png';
-  static const notephone = 'assets/images/notephone.gif';
+  static const notephone = 'assets/images/notephone.png';
   static const line = 'assets/images/line.png';
 }

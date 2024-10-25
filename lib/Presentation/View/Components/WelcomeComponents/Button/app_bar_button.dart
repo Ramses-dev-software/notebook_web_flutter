@@ -52,7 +52,7 @@ class AppBarButton extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         decoration: BoxDecoration(
             color: background,
             gradient: gradient,
@@ -72,14 +72,14 @@ class AppBarButton extends StatelessWidget {
                     ),
                     Text(
                       text,
-                      style: AfacadFluxFont.afacadBold.copyWith(
+                      style: AfacadFluxFont.afacadLight.copyWith(
                           color: textColor ?? ColorsApp.black, fontSize: 18),
                     ),
                   ],
                 )
               : Text(
                   text,
-                  style: AfacadFluxFont.afacadBold.copyWith(
+                  style: AfacadFluxFont.afacadLight.copyWith(
                       color: textColor ?? ColorsApp.black, fontSize: 18),
                 ),
         ));
