@@ -4,7 +4,6 @@ import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Butt
 import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Assets/on_background.dart';
 import 'package:notebook_web/Presentation/View/Style/assets_images.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
-import 'package:notebook_web/Presentation/View/routes.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 
@@ -115,8 +114,8 @@ class BodyViewTop extends StatelessWidget {
                             ),
                             ResponsiveRowColumnItem(
                               child: AppBarButton(
-                                toRoute: Routes.github,
                                 text: 'Github',
+                                url: true,
                                 width: ResponsiveBreakpoints.of(context).isMobile
                                    || ResponsiveBreakpoints.of(context).isTablet ? 220 : 150,
                                 height: 70,

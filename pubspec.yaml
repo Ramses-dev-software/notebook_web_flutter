@@ -14,7 +14,7 @@ dependencies:
   flutter_bloc: ^8.1.6
   http: ^1.2.2
   responsive_framework: ^1.5.1
-  rive: ^0.13.14
+  url_launcher: ^6.1.7
 
 dev_dependencies:
   flutter_test:

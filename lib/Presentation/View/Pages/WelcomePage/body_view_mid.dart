@@ -210,7 +210,7 @@ class BodyViewMid extends StatelessWidget {
             
             SizedBox(height: 100),
             Padding(
-              padding: EdgeInsets.all(40),
+              padding: EdgeInsets.all(20),
               child: BodyViewBottom(),
             )
         ]),

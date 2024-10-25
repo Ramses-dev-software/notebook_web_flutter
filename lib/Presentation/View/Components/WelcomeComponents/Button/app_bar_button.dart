@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:notebook_web/Presentation/Controller/WelcomePage/github_api.dart';
 import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Assets/on_background.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
 
+final _apiService = GithubApi();
 
 class AppBarButton extends StatelessWidget {
-  final String toRoute;
+  final String? toRoute;
+  final bool? url;
   final String text;
   final Color? textColor;
   final Color? background;
@@ -19,7 +22,8 @@ class AppBarButton extends StatelessWidget {
       this.height,
       this.width,
       this.routeImage,
-      required this.toRoute,
+      this.toRoute,
+      this.url,
       required this.text,
       this.textColor,
       this.background,
@@ -58,7 +62,10 @@ class AppBarButton extends StatelessWidget {
             gradient: gradient,
             borderRadius: BorderRadius.circular(10)),
         child: GestureDetector(
-          onTap: () => Navigator.pushReplacementNamed(context, toRoute),
+          onTap: () { 
+            url == null && url! ? Navigator.pushReplacementNamed(context, toRoute!) :
+              _apiService.openUrlFromApi(context);
+          },
           child: routeImage != null
               ? Row(
                   children: [
@@ -83,19 +90,6 @@ class AppBarButton extends StatelessWidget {
                       color: textColor ?? ColorsApp.black, fontSize: 18),
                 ),
         ));
-  }
-}
-
-
-class DrawerListButton extends StatelessWidget {
-  final String titleList;
-  const DrawerListButton({super.key, required this.titleList});
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(titleList,
-        style: RobotoFont.robotoRegular.copyWith(fontSize: 15));
   }
 }
 
