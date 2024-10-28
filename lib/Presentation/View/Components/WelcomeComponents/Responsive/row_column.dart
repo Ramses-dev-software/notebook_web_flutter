@@ -35,10 +35,6 @@ class RowColumnResponsiveSection extends StatelessWidget {
                 RowSection(),
                 SizedBox(
                   height: 500,
-                  child: VerticalDivider(
-                    thickness: 2,
-                    color: ColorsApp.black,
-                  ),
                 )
               ],
             ),
@@ -74,10 +70,15 @@ class _SectionAbout extends StatelessWidget {
       return (270, 270);
     }
     
-    if(ResponsiveBreakpoints.of(context).screenWidth > 1000) {
+    else if(ResponsiveBreakpoints.of(context).screenWidth >= 1000 && 
+      ResponsiveBreakpoints.of(context).screenWidth < 1100) {
       return (300, 300);
     }
-    return (400, 200);
+
+    else if(ResponsiveBreakpoints.of(context).screenWidth >= 1100) {
+      return (300, 400);
+    }
+    return (250, 200);
   }
 
   @override
@@ -119,7 +120,7 @@ class _SectionAbout extends StatelessWidget {
               ),
             ),
             ResponsiveRowColumnItem(
-                child: AssetsIM(
+                child: OnBackground(
               assetRoute: routeGif,
               width: width,
               height: height,

@@ -21,7 +21,6 @@ class _HeightViewPageState extends State<HeightViewPage> {
         backgroundColor: appBarColor,
         surfaceTintColor: ColorsApp.white,
         elevation: 40,
-        pinned: true,
         expandedHeight: toolbarHeight,
         toolbarHeight: toolbarHeight,
         shadowColor: ColorsApp.black,

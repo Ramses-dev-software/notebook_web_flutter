@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notebook_web/Presentation/View/Pages/WelcomePage/body_view_bottom.dart';
 import 'package:notebook_web/Presentation/View/Pages/WelcomePage/body_view_mid.dart';
 import 'package:notebook_web/Presentation/View/Pages/WelcomePage/body_view_top.dart';
 import 'package:notebook_web/Presentation/View/Pages/WelcomePage/height_view.dart';

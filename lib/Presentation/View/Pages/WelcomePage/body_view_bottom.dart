@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Button/app_bar_button.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
+import 'package:notebook_web/Presentation/View/routes.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class BodyViewBottom extends StatelessWidget {
@@ -8,7 +9,8 @@ class BodyViewBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  double richFontSize = !ResponsiveBreakpoints.of(context).isDesktop ? 40 : 100;
+    double fonts = ResponsiveBreakpoints.of(context).isDesktop ? 80 : 40;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -19,14 +21,14 @@ class BodyViewBottom extends StatelessWidget {
               TextSpan(
                 text: 'Join us, and start using',
                 style: AfacadFluxFont.afacadBold.copyWith(
-                  fontSize: richFontSize,
+                  fontSize: fonts,
                   color: ColorsApp.black
                 )
               ),
               TextSpan(
                 text: ' Noterg',
                 style: AfacadFluxFont.afacadBlack.copyWith(
-                  fontSize: richFontSize,
+                  fontSize: fonts,
                   color: ColorsApp.darkPink
                 )
               )
@@ -38,38 +40,48 @@ class BodyViewBottom extends StatelessWidget {
         Align(
           alignment: Alignment.center,
           child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(5),
           child: Container(
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: LinearGradient(colors: [ColorsApp.redPink, ColorsApp.pinkPurple])
             ),
-            padding: EdgeInsets.all(50),
+            padding: EdgeInsets.all(30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Get started',
                   style: AfacadFluxFont.afacadBlack.copyWith(
-                    fontSize: richFontSize
+                    fontSize: fonts
                   ),
                 ),
                 Text(
                   'Make your ideas true with Noterg',
                   style: AfacadFluxFont.afacadBold.copyWith(
-                    fontSize: 40
+                    fontSize: fonts - 20
                   ),
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                AppBarButton(
-                  toRoute: '/', 
-                  text: 'Start ->',
-                  width: 100,
-                  background: ColorsApp.black,
-                  textColor: ColorsApp.white,
+                GestureDetector(
+                  onTap: () => Navigator.pushReplacementNamed(context, Routes.loginPage),
+                  child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  decoration: BoxDecoration(
+                    color: ColorsApp.black,
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: Text(
+                    'Start ->',
+                    style: RobotoFont.robotoLight.copyWith(
+                      fontSize: 20,
+                      color: ColorsApp.white
+                    ),
+                  ),
+                ),
                 )
               ],
             ),

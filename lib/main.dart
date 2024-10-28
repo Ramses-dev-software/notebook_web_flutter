@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notebook_web/Presentation/View/Pages/LoginPage/login.dart';
 import 'package:notebook_web/Presentation/View/Pages/WelcomePage/welcome.dart';
 import 'package:notebook_web/Presentation/View/Style/responsive.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
@@ -19,6 +20,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       builder: (context, widget) => ResponsiveBreakpoints.builder(
         child: widget!,
         breakpoints: Responsive.breakpointsResponsive
@@ -28,6 +30,9 @@ class MainApp extends StatelessWidget {
         switch(settings.name) {
           case Routes.start:
            return MaterialPageRoute(builder: (_) => WelcomePage());
+          
+          case Routes.loginPage:
+           return MaterialPageRoute(builder: (_) => Login());
         }
         return MaterialPageRoute(builder: (_) => WelcomePage());
       },

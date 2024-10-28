@@ -97,7 +97,6 @@ class BodyViewTop extends StatelessWidget {
                           children: [
                             ResponsiveRowColumnItem(
                               child: AppBarButton(
-                                toRoute: '/',
                                 text: 'Download for free',
                                 background: ColorsApp.white,
                                 textColor: ColorsApp.black,

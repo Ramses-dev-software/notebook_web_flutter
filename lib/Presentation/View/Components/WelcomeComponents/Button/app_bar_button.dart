@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:notebook_web/Presentation/Controller/WelcomePage/github_api.dart';
 import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Assets/on_background.dart';
 import 'package:notebook_web/Presentation/View/Style/style_app.dart';
+import 'package:notebook_web/Presentation/View/routes.dart';
 
 final _apiService = GithubApi();
 
@@ -32,7 +33,7 @@ class AppBarButton extends StatelessWidget {
 
   factory AppBarButton.signIn() {
     return AppBarButton(
-      toRoute: '/',
+      toRoute: Routes.loginPage,
       text: 'Sign in',
       textColor: ColorsApp.white,
       background: ColorsApp.black,
@@ -42,7 +43,6 @@ class AppBarButton extends StatelessWidget {
 
   factory AppBarButton.download() {
     return AppBarButton(
-      toRoute: '/',
       text: 'Download',
       gradient:
           LinearGradient(colors: [ColorsApp.redPink, ColorsApp.pinkPurple]),
@@ -62,10 +62,11 @@ class AppBarButton extends StatelessWidget {
             gradient: gradient,
             borderRadius: BorderRadius.circular(10)),
         child: GestureDetector(
-          onTap: () { 
-            url == null && url! ? Navigator.pushReplacementNamed(context, toRoute!) :
-              _apiService.openUrlFromApi(context);
-          },
+          onTap: () => url != null || toRoute != null ? 
+            url == null ? Navigator.pushReplacementNamed(context, toRoute!) :
+              _apiService.openUrlFromApi(context) 
+              
+          : null,
           child: routeImage != null
               ? Row(
                   children: [

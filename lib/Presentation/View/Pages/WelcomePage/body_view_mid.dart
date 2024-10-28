@@ -140,7 +140,7 @@ class BodyViewMid extends StatelessWidget {
             height: 100,
           ),
           Padding(
-              padding: EdgeInsets.all(ResponsiveBreakpoints.of(context).isMobile ? 10 : 30),
+              padding: EdgeInsets.all(ResponsiveBreakpoints.of(context).isMobile ? 20 : 30),
               child: ResponsiveRowColumn(
                 rowMainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 layout: ResponsiveBreakpoints.of(context).screenWidth <= 870

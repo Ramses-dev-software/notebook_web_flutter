@@ -23,7 +23,6 @@ class ToolsCard extends StatelessWidget {
       height: 500,
       child: Card(
       color: ColorsApp.lightGrey,
-      elevation: 20,
       shape: Border.fromBorderSide(BorderSide(width: 2, color: ColorsApp.black)),
       child: Padding(
         padding: EdgeInsets.all(15),
