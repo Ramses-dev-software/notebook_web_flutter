@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Button/app_bar_button.dart';
-import 'package:notebook_web/Presentation/View/Components/WelcomeComponents/Containers/logo_app.dart';
-import 'package:notebook_web/Presentation/View/Style/style_app.dart';
+import 'package:notebook_web/Core/Theme/theme_pallete.dart';
+import 'package:notebook_web/Presentation/View/Widgets/PresentationPage/appbar_button.dart';
+import 'package:notebook_web/Presentation/View/Widgets/PresentationPage/appbar_option.dart';
+import 'package:notebook_web/Presentation/View/WidgetsGlobal/logo.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class HeightViewPage extends StatefulWidget {
@@ -20,41 +21,53 @@ class _HeightViewPageState extends State<HeightViewPage> {
     return SliverAppBar(
         backgroundColor: appBarColor,
         surfaceTintColor: ColorsApp.white,
-        elevation: 40,
-        expandedHeight: toolbarHeight,
         toolbarHeight: toolbarHeight,
+        expandedHeight: 100,
+        floating: true,
+        snap: true,
+        elevation: 20,
         shadowColor: ColorsApp.black,
         flexibleSpace: FlexibleSpaceBar(
-          titlePadding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-          title: ResponsiveBreakpoints.of(context).isDesktop ? Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          titlePadding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+          title: ResponsiveBreakpoints.of(context).screenWidth <= 690 ? 
+          Row(
+            children: [
+              LogoNoterg(backgroundColor: ColorsApp.black,)
+            ],
+          )
+          : 
+          Row(
+            children: [
+              LogoNoterg(backgroundColor: ColorsApp.black,),
+              SizedBox(width: 5,), 
+              Expanded(
+                child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: ColorsApp.black
+                ),
+                padding: EdgeInsets.symmetric(vertical: 3),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    LogoApp(
-                      width: 60,
-                      height: 120,
-                      background: ColorsApp.black,
-                      textColor: ColorsApp.white,
-                    ),
-                    Row(
-                      children: [
-                        AppBarButton.signIn(),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        AppBarButton.download()
-                      ],
-                    )
-                  ],
-                ) : Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    LogoApp(
-                      background: ColorsApp.black,
-                      textColor: ColorsApp.white,
-                      height: 200, width: 60
-                    )
+                    AppbarOption(text: 'Forum'),
+                    AppbarOption(text: 'Blog'),
+                    AppbarOption(text: 'Docs')
                   ],
                 ),
+              ),
+              ),
+              SizedBox(width: 5,),
+              Row(
+                children: [
+                  AppbarButton.signIn(),
+                  SizedBox(width: 3,),
+                  AppbarButton.download()
+                ],
+              )
+            ],
+          )
         ));
   }
 }

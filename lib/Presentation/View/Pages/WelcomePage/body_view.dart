@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:notebook_web/Presentation/View/Pages/WelcomePage/body_view_mid.dart';
-import 'package:notebook_web/Presentation/View/Pages/WelcomePage/body_view_top.dart';
+import 'package:notebook_web/Core/Theme/responsive.dart';
 import 'package:notebook_web/Presentation/View/Pages/WelcomePage/height_view.dart';
-import 'package:notebook_web/Presentation/View/Style/responsive.dart';
+import 'package:notebook_web/Presentation/View/Pages/WelcomePage/top_view.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 
 class BodyView extends StatefulWidget {
@@ -39,12 +39,16 @@ class _BodyViewState extends State<BodyView> {
 
     return CustomScrollView(
       controller: _scrollController,
+      shrinkWrap: true,
       slivers: [
         HeightViewPage(),
-        //Todo: This is the top design on the presentation web.
-        BodyViewTop(),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: ResponsiveBreakpoints.of(context).isMobile ? 10 : 20),
+            child: TopView(),
+          ),
+        )
 
-        BodyViewMid(),
       ],
     );
   }

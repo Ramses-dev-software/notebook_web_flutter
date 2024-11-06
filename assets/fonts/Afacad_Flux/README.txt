@@ -8,20 +8,20 @@ Afacad Flux is a variable font with these axes:
   wght
 
 This means all the styles are contained in a single file:
-  AfacadFlux-VariableFont_slnt,wght.ttf
+  Afacad_Flux/AfacadFlux-VariableFont_slnt,wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
 in those cases you can use the static font files for Afacad Flux:
-  static/AfacadFlux-Thin.ttf
-  static/AfacadFlux-ExtraLight.ttf
-  static/AfacadFlux-Light.ttf
-  static/AfacadFlux-Regular.ttf
-  static/AfacadFlux-Medium.ttf
-  static/AfacadFlux-SemiBold.ttf
-  static/AfacadFlux-Bold.ttf
-  static/AfacadFlux-ExtraBold.ttf
-  static/AfacadFlux-Black.ttf
+  Afacad_Flux/static/AfacadFlux-Thin.ttf
+  Afacad_Flux/static/AfacadFlux-ExtraLight.ttf
+  Afacad_Flux/static/AfacadFlux-Light.ttf
+  Afacad_Flux/static/AfacadFlux-Regular.ttf
+  Afacad_Flux/static/AfacadFlux-Medium.ttf
+  Afacad_Flux/static/AfacadFlux-SemiBold.ttf
+  Afacad_Flux/static/AfacadFlux-Bold.ttf
+  Afacad_Flux/static/AfacadFlux-ExtraBold.ttf
+  Afacad_Flux/static/AfacadFlux-Black.ttf
 
 Get started
 -----------
