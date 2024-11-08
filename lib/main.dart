@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:notebook_web/Core/Routes/routes_app.dart';
 import 'package:notebook_web/Core/Theme/responsive.dart';
 import 'package:notebook_web/Core/Theme/theme_pallete.dart';
-import 'package:notebook_web/Presentation/View/Pages/LoginPage/login.dart';
 import 'package:notebook_web/Presentation/View/Pages/WelcomePage/presentation_page.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 

@@ -37,7 +37,7 @@ class AppbarButton extends StatefulWidget {
 
 class _AppbarButtonState extends State<AppbarButton> {
   bool onHover = false;
-
+  
   void _buttonHover() {
     setState(() {
       onHover = !onHover;
@@ -47,10 +47,10 @@ class _AppbarButtonState extends State<AppbarButton> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      cursor: SystemMouseCursors.click,
       onEnter: (_) => _buttonHover(),
       onExit: (_) => _buttonHover(),
-      child: InkWell(
+      child: InkResponse(
+        mouseCursor: SystemMouseCursors.click,
           child: Container(
         padding: EdgeInsets.symmetric(vertical: 14, horizontal: 20),
         decoration: BoxDecoration(

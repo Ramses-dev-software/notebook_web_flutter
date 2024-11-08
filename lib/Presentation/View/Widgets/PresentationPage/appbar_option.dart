@@ -4,8 +4,7 @@ import 'package:notebook_web/Core/Theme/theme_pallete.dart';
 
 class AppbarOption extends StatefulWidget {
   final String text;
-  final bool? expanded;
-  const AppbarOption({super.key, required this.text, this.expanded = false});
+  const AppbarOption({super.key, required this.text});
 
   @override
   State<AppbarOption> createState() => _AppbarOptionState();
@@ -23,10 +22,10 @@ class _AppbarOptionState extends State<AppbarOption> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      cursor: SystemMouseCursors.grabbing,
       onExit: (_) => _buttonHover(),
       onEnter: (_) => _buttonHover(),
-      child: InkWell(
+      child: InkResponse(
+      mouseCursor: SystemMouseCursors.click,
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         decoration: BoxDecoration(

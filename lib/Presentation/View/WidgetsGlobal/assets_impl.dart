@@ -14,6 +14,7 @@ class AssetsImpl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
+      alignment: Alignment.centerLeft,
       fit: BoxFit.cover,
             assetRoute,
             width: width,

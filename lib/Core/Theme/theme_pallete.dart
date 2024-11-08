@@ -7,6 +7,8 @@ final class ColorsApp {
   static const Color black = Colors.black;
   static const Color white = Colors.white;
   static const Color blue = Color(0xFF3533cd);
+  static const Color lightBlue = Color(0xFF5de0e6);
+  static const Color highBlue = Color(0xFF004aad);
   static const Color yellowContainer = Color.fromARGB(255, 255, 188, 101);
   static const Color darkPurple = Color.fromARGB(255, 4, 4, 54);
   static const Color redPink = Color(0xFFFF5757);
@@ -17,13 +19,18 @@ final class ColorsApp {
   static const Color lightGrey = Color.fromARGB(255, 247, 246, 246);
   static const Color red = Color(0xFFFF3131);
   static const Color redOrange = Color(0xFFFF914d);
+  static const Color lightPink = Color(0XFFebb0ff);
+  static const Color lightGreen = Color(0xFFcdffd8);
+  static const Color lowerBlue = Color(0xFF94b9ff);
   
 }
 
 final class ThemeApp {
   static ThemeData themeDataLight = ThemeData(
     useMaterial3: true,
-    brightness: Brightness.light
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: ColorsApp.white,
+    colorSchemeSeed: ColorsApp.white
   );
 
 

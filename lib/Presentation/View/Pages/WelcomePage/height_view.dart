@@ -6,7 +6,8 @@ import 'package:notebook_web/Presentation/View/WidgetsGlobal/logo.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class HeightViewPage extends StatefulWidget {
-  const HeightViewPage({super.key});
+  final ScrollController scrollController;
+  const HeightViewPage({super.key, required this.scrollController});
 
   @override
   State<HeightViewPage> createState() => _HeightViewPageState();
@@ -23,8 +24,6 @@ class _HeightViewPageState extends State<HeightViewPage> {
         surfaceTintColor: ColorsApp.white,
         toolbarHeight: toolbarHeight,
         expandedHeight: 100,
-        floating: true,
-        snap: true,
         elevation: 20,
         shadowColor: ColorsApp.black,
         flexibleSpace: FlexibleSpaceBar(

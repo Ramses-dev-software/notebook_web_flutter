@@ -28,7 +28,7 @@ class _DropdownSectionsState extends State<DropdownSections> {
       expandedCrossAxisAlignment: CrossAxisAlignment.start,
       expandedAlignment: Alignment(-1, 0),
       children: [
-        AppbarOption(text: 'Forum', expanded: true),
+        AppbarOption(text: 'Forum'),
         SizedBox(height: 10,),
         AppbarOption(text: 'Blog'),
         SizedBox(height: 10,),

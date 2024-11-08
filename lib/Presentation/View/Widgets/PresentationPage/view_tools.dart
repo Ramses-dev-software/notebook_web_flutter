@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:notebook_web/Core/AssetsApp/assets_fonts.dart';
-import 'package:notebook_web/Core/AssetsApp/assets_images.dart';
 import 'package:notebook_web/Presentation/View/WidgetsGlobal/assets_impl.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
