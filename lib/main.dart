@@ -26,16 +26,8 @@ class MainApp extends StatelessWidget {
         breakpoints: Responsive.breakpointsResponsive
       ),
       theme: ThemeApp.themeDataLight,
-      onGenerateRoute: (settings) {
-        switch(settings.name) {
-          case RoutesApp.presentation:
-           return MaterialPageRoute(builder: (_) => PresentationPage());
-        }
-        return MaterialPageRoute(builder: (_) => PresentationPage());
-      },
-      
-      
-      home: PresentationPage(),
+      onGenerateRoute: AppWidgetRoutes.routeFactory,
+      home: AppWidget.presentationPage,
     );
   }
 }
