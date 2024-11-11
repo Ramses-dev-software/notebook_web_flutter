@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:notebook_web/Core/Theme/responsive.dart';
+<<<<<<< HEAD:lib/Presentation/View/Pages/WelcomePage/body_view.dart
 import 'package:notebook_web/Presentation/View/Pages/WelcomePage/height_view.dart';
 import 'package:notebook_web/Presentation/View/Pages/WelcomePage/body.dart';
+=======
+import 'package:notebook_web/Presentation/View/Pages/PresentationPage/height_view.dart';
+import 'package:notebook_web/Presentation/View/Pages/PresentationPage/body.dart';
+>>>>>>> 414a8a2ce89881e60a17c7ca5d64c9b11cdbae2a:lib/Presentation/View/Pages/PresentationPage/body_view.dart
 import 'package:responsive_framework/responsive_framework.dart';
 
 
@@ -40,7 +45,7 @@ class _BodyViewState extends State<BodyView> {
     return CustomScrollView(
       controller: _scrollController,
       slivers: [
-        HeightViewPage(scrollController: _scrollController,),
+        const HeightViewPage(),
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: ResponsiveBreakpoints.of(context).isMobile ? 10 : 20),

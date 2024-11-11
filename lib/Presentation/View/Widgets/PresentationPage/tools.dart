@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notebook_web/Core/AssetsApp/assets_fonts.dart';
+import 'package:notebook_web/Core/Theme/theme_pallete.dart';
 import 'package:notebook_web/Presentation/View/WidgetsGlobal/assets_impl.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -52,13 +53,14 @@ class _ToolsSectionsState extends State<ToolsSections> {
       onVisibilityChanged: _changeOpacity,
       child: AnimatedOpacity(
       opacity: opacity,
-      duration: Duration(milliseconds: 400),
+      duration: Duration(seconds: 1),
       curve: Curves.ease,
       child: Container(
-      padding: EdgeInsets.only(top: ResponsiveBreakpoints.of(context).isMobile ? 40 : 140, left: 20, right: 20, bottom: 20),
+      padding: EdgeInsets.symmetric(horizontal: ResponsiveBreakpoints.of(context).isMobile ? 20 : 40, vertical: 35),
       width: ResponsiveBreakpoints.of(context).screenWidth,
       decoration: BoxDecoration(gradient: LinearGradient(colors: widget.gradient)),
       child: widget.form == FormSection.twoColumns ? 
+       
        ResponsiveRowColumn(
         rowMainAxisAlignment: MainAxisAlignment.center,
         columnCrossAxisAlignment: CrossAxisAlignment.center,
@@ -78,17 +80,17 @@ class _ToolsSectionsState extends State<ToolsSections> {
                   widget.title,
                   style: RobotoMono.bold.copyWith(
                     fontSize:
-                        ResponsiveBreakpoints.of(context).isMobile ? 30 : 60,
+                        ResponsiveBreakpoints.of(context).isMobile ? 27 : 40,
                   ),
                 ),
                 Text(
                   widget.subTitle,
                   style: RobotoMono.regular.copyWith(
                       fontSize:
-                          ResponsiveBreakpoints.of(context).isMobile ? 18 : 23),
+                          ResponsiveBreakpoints.of(context).isMobile ? 15 : 20),
                 ),
                 ResponsiveRowColumnItem(
-            child: widget.complement ?? SizedBox(height: 40, width: 40,),
+            child: widget.complement ?? SizedBox(height: 80, width: 40,),
           ),
               ],
             ),
@@ -98,46 +100,57 @@ class _ToolsSectionsState extends State<ToolsSections> {
           ),
 
           ResponsiveRowColumnItem(
-            child: AssetsImpl(
-              assetRoute: widget.assetRoute,
-              width: ResponsiveBreakpoints.of(context).isMobile ? null : 400,
-              height: ResponsiveBreakpoints.of(context).isMobile ? null : 700,
-            ),
+            child: Card.filled(
+              elevation: 20,
+              color: Colors.transparent,
+              child:AssetsImpl(
+            assetRoute: widget.assetRoute,
+            width: null,
+            height: 500,
+          )
+            )
           ),
          ],
        ) : 
        Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
             width: 750,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   widget.title,
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.start,
                   style: RobotoMono.bold.copyWith(
                     fontSize:
-                        ResponsiveBreakpoints.of(context).isMobile ? 30 : 60,
+                        ResponsiveBreakpoints.of(context).isMobile ? 27 : 40,
                   ),
                 ),
                 Text(
                   widget.subTitle,
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.start,
                   style: RobotoMono.regular.copyWith(
                       fontSize:
-                          ResponsiveBreakpoints.of(context).isMobile ? 18 : 23),
+                          ResponsiveBreakpoints.of(context).isMobile ? 15 : 20),
                 ),
               ],
             ),
           ),
           SizedBox(
-            height: 70,
+            height: 40,
           ),
-          AssetsImpl(
+          SizedBox(
+            width: !ResponsiveBreakpoints.of(context).isDesktop ? null : 800,
+            child: Card.filled(
+              elevation: 20,
+              color: Colors.transparent,
+              child: AssetsImpl(
             assetRoute: widget.assetRoute,
-            width: ResponsiveBreakpoints.of(context).screenWidth,
-            height: ResponsiveBreakpoints.of(context).isMobile ? 400 : 500,
+            width: !ResponsiveBreakpoints.of(context).isMobile ? null : 700,
+            height: null,
+            ),
+            )
           )
         ],
       ),

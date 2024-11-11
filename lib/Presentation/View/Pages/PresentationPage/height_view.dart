@@ -6,8 +6,7 @@ import 'package:notebook_web/Presentation/View/WidgetsGlobal/logo.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class HeightViewPage extends StatefulWidget {
-  final ScrollController scrollController;
-  const HeightViewPage({super.key, required this.scrollController});
+  const HeightViewPage({super.key});
 
   @override
   State<HeightViewPage> createState() => _HeightViewPageState();
@@ -31,13 +30,13 @@ class _HeightViewPageState extends State<HeightViewPage> {
           title: ResponsiveBreakpoints.of(context).screenWidth <= 690 ? 
           Row(
             children: [
-              LogoNoterg(backgroundColor: ColorsApp.black,)
+              LogoNoterg(backgroundColor: ColorsApp.black, logoTheme: LogoTheme.light,)
             ],
           )
           : 
           Row(
             children: [
-              LogoNoterg(backgroundColor: ColorsApp.black,),
+              LogoNoterg(backgroundColor: ColorsApp.black, logoTheme: LogoTheme.light,),
               SizedBox(width: 5,), 
               Expanded(
                 child: Container(

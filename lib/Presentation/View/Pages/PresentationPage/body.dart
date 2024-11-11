@@ -3,28 +3,26 @@ import 'package:notebook_web/Core/AssetsApp/assets_fonts.dart';
 import 'package:notebook_web/Core/AssetsApp/assets_images.dart';
 import 'package:notebook_web/Core/Theme/responsive.dart';
 import 'package:notebook_web/Core/Theme/theme_pallete.dart';
-import 'package:notebook_web/Presentation/View/Pages/WelcomePage/bottom_view.dart';
+import 'package:notebook_web/Presentation/View/Pages/PresentationPage/bottom_view.dart';
 import 'package:notebook_web/Presentation/View/Widgets/PresentationPage/bottom_button.dart';
+import 'package:notebook_web/Presentation/View/Widgets/PresentationPage/container_section.dart';
 import 'package:notebook_web/Presentation/View/Widgets/PresentationPage/tools.dart';
 import 'package:notebook_web/Presentation/View/Widgets/PresentationPage/view_tools.dart';
 import 'package:notebook_web/Presentation/View/WidgetsGlobal/assets_impl.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-const String firstContainerTitle = 'Analyze your notes';
-const String firstContainerContent = 'IntelliSense is built directly into the editor, allowing you to quickly preview documentation, jump to sources, apply quick fixes and more. ';
+const String _firstContainerTitle = 'Analyze your notes';
+const String _firstContainerContent = 'IntelliSense is built directly into the editor, allowing you to quickly preview documentation, jump to sources, apply quick fixes and more. ';
 
-const String secondContainerTitle = 'AI Implementation';
-const String secondContainerContent = 'With integrate AI, you can od autocomplete, smart recommendations, and easy access to related topics. Elevate you creativity and organization with AI-powered notes!';
+const String _secondContainerTitle = 'AI Implementation';
+const String _secondContainerContent = 'With integrate AI, you can od autocomplete, smart recommendations, and easy access to related topics. Elevate you creativity and organization with AI-powered notes!';
 
-const String thirdContainerTitle = 'Collaborative notes and fasting build in real-time';
-const String thirdContainerContent = 'Bring the power of Noterg! to your own workflow. Rapidly build, instantly analyze and collaborative notes in real-time with other people.';
-const String firstBenefit = '';
-const String secondBenefit = '';
-const String thirBenefit = '';
+const String _thirdContainerTitle = 'Collaborative notes and fasting build in real-time';
+const String _thirdContainerContent = 'Bring the power of Noterg! to your own workflow. Rapidly build, instantly analyze and collaborative notes in real-time with other people.';
 
-const secondGradient = <Color>[ColorsApp.yellowLight, ColorsApp.redOrange];
-const firstGradient = <Color>[ColorsApp.lightPink, ColorsApp.pink];
-const thirdGradient = <Color>[ColorsApp.lightBlue, ColorsApp.highBlue];
+const _secondGradient = <Color>[ColorsApp.yellowLight, ColorsApp.redOrange];
+const _firstGradient = <Color>[ColorsApp.lightPink, ColorsApp.pink];
+const _thirdGradient = <Color>[ColorsApp.lightBlue, ColorsApp.highBlue];
 
 class Body extends StatefulWidget {
   final ScrollController controller;
@@ -103,22 +101,27 @@ class _BodyState extends State<Body> {
           padding: EdgeInsets.symmetric(
             horizontal: ResponsiveBreakpoints.of(context).isMobile ? 0 : 15),
           width: ResponsiveBreakpoints.of(context).screenWidth,
-          height: 700,
+          height: 500,
           color: const Color.fromARGB(255, 203, 203, 203),
           child: SizedBox(
             child: Stack(
             alignment: Alignment.bottomCenter,
             children: [
-              AssetsImpl(
+              Card.filled(
+                color: Colors.transparent,
+                shadowColor: ColorsApp.black,
+                elevation: 20,
+                child: AssetsImpl(
                 assetRoute: RouteAssetImages.coding,
                 width: ResponsiveBreakpoints.of(context).screenWidth,
-                height: 650,
+                height: 480,
+                ),
               ),
 
               Align(
                 alignment: Alignment.center,
                 child: SizedBox(
-                  width: 400,
+                  width: ResponsiveBreakpoints.of(context).isMobile ? 300 : 400,
                   child: Text(
                   textAlign: TextAlign.center,
                   'See Noterg in action',
@@ -185,40 +188,40 @@ class _BodyState extends State<Body> {
         SizedBox(height: 20,),
 
         ToolsSections(
-          title: firstContainerTitle, 
-          subTitle: firstContainerContent, 
+          title: _firstContainerTitle, 
+          subTitle: _firstContainerContent, 
           assetRoute: RouteAssetImages.autocomplete, 
-          gradient: firstGradient,
+          gradient: _firstGradient,
           keyV: 'wid1',
         ),
         SizedBox(height: 20,),
         ToolsSections(
-          title: secondContainerTitle, 
-          subTitle: secondContainerContent, 
+          title: _secondContainerTitle, 
+          subTitle: _secondContainerContent, 
           assetRoute: RouteAssetImages.ai, 
-          gradient: secondGradient,
+          gradient: _secondGradient,
           keyV: 'wid2',
         ),
         SizedBox(height: 20,),
         ToolsSections(
-          title: thirdContainerTitle, 
-          subTitle: thirdContainerContent, 
+          title: _thirdContainerTitle, 
+          subTitle: _thirdContainerContent, 
           assetRoute: RouteAssetImages.notephone, 
-          gradient: thirdGradient,
+          gradient: _thirdGradient,
           keyV: 'wid3',
           form: FormSection.twoColumns,
-          complement: ContainerBenefits(
-            benefits: [
-              BenefitsInformation(
-                info: 'Instantly build, analyze, and work on notes with others, perfect for team projects.', 
+          complement: ContainerSection(
+            elements: [
+              SectionCheck(
+                text: 'Instantly build, analyze, and work on notes with others, perfect for team projects.', 
                 assetRoute: RouteAssetImages.checkbox
               ),
-              BenefitsInformation(
-                info: 'Encourages a mindset of letting go, focusing on important notes, and eliminating distractions.', 
+              SectionCheck(
+                text: 'Encourages a mindset of letting go, focusing on important notes, and eliminating distractions.', 
                 assetRoute: RouteAssetImages.checkbox
               ),
-              BenefitsInformation(
-                info: 'Maintains a clear and organized space, making active notes easy to find and manage.', 
+              SectionCheck(
+                text: 'Maintains a clear and organized space, making active notes easy to find and manage.', 
                 assetRoute: RouteAssetImages.checkbox
               )
             ], 
@@ -226,7 +229,7 @@ class _BodyState extends State<Body> {
         ),
         SizedBox(height: 20,),
         Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 90),
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
             width: ResponsiveBreakpoints.of(context).screenWidth,
             decoration: BoxDecoration(
               color: ColorsApp.black,
@@ -243,9 +246,10 @@ class _BodyState extends State<Body> {
                         alignment: Alignment.center,
                         width: 800,
                         child: Text(
+                        textAlign: TextAlign.center,
                         'Try Noterg now!',
                         style: RobotoMono.bold.copyWith(
-                          fontSize: ResponsiveBreakpoints.of(context).isMobile ? 30 : 60,
+                          fontSize: ResponsiveBreakpoints.of(context).isMobile ? 25 : 40,
                           color: ColorsApp.white
                         ),
                       ),
@@ -266,55 +270,3 @@ class _BodyState extends State<Body> {
       ));
   }
 }
-
-class ContainerBenefits extends StatelessWidget {
-  final List<BenefitsInformation> benefits;
-  final List<Color> gradient;
-  const ContainerBenefits({super.key, required this.benefits, required this.gradient});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(colors: gradient)
-      ),
-      padding: EdgeInsets.all(20),
-      child: Column(
-        children: benefits,)
-    );
-  }
-}
-
-class BenefitsInformation extends StatelessWidget {
-  final String info;
-  final String assetRoute;
-  const BenefitsInformation({super.key, required this.info, required this.assetRoute});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        AssetsImpl(
-          assetRoute: assetRoute,
-          width: 15,
-          height: 15,
-        ),
-        SizedBox(width: 30,),
-        Expanded(
-          child: SizedBox(
-          width: 300,
-          child: Text(
-          info,
-          style: RobotoFont.robotoRegular.copyWith(
-            fontSize: 14
-          ),
-          )
-        ),
-        ),
-        SizedBox(height: 70,)
-      ],
-    );
-  }
-}
-
